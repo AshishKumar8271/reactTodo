@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import "./grocerList/grocery.css";
 
 
-//getting data from local storage:
-// const getDataFromStroage=()=>{
-//   return JSON.parse(localStorage.getItem("groceryList"));
-// }
+// getting data from local storage:
+const getDataFromStroage=()=>{
+  return JSON.parse(localStorage.getItem("groceryList"));
+}
 
 
 const App = () => {
-  const [items, setItems] = useState([]);
-  // const [items, setItems] = useState(getDataFromStroage());
+  // const [items, setItems] = useState([]);
+  const [items, setItems] = useState(getDataFromStroage());
   const [itemName, setItemName] = useState('');
   const [editFlag, setEditFlag] = useState(false);
   const [editItem,setEditItem] = useState();
@@ -19,9 +19,9 @@ const App = () => {
 
 
   //seting up items to local storage:
-  // useEffect(()=>{
-  //   localStorage.setItem("groceryList",JSON.stringify(items));
-  // },[items]);
+  useEffect(()=>{
+    localStorage.setItem("groceryList",JSON.stringify(items));
+  },[items]);
 
 
   
