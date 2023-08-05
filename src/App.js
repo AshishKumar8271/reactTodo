@@ -4,9 +4,9 @@ import "./grocerList/grocery.css";
 
 // // getting data from local storage:
 const getDataFromStroage=()=>{
-  let StorageList=JSON.parse(localStorage.getItem("groceryList"));
+  let StorageList=localStorage.getItem("groceryList");
   if(StorageList!==[]){
-    return StorageList;
+    return JSON.parse(StorageList);
   }
   else{
     return [];
