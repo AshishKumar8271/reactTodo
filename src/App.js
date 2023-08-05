@@ -3,20 +3,14 @@ import "./grocerList/grocery.css";
 
 
 // // getting data from local storage:
-const getDataFromStroage=()=>{
-  let StorageList=sessionStorage.getItem("groceryList");
-  if(StorageList!==[]){
-    return JSON.parse(StorageList);
-  }
-  else{
-    return [];
-  }
-}
+// const getDataFromStroage=()=>{
+//   return JSON.parse(localStorage.getItem("groceryList"));
+// }
 
 
 const App = () => {
-  // const [items, setItems] = useState([]);
-  const [items, setItems] = useState(getDataFromStroage());
+  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState(getDataFromStroage());
   const [itemName, setItemName] = useState('');
   const [editFlag, setEditFlag] = useState(false);
   const [editItem,setEditItem] = useState();
@@ -24,10 +18,10 @@ const App = () => {
   const [alertValue,setAlertValue] =useState('written just for the permanent space');
 
 
-  //seting up items to local storage:
-  useEffect(()=>{
-    sessionStorage.setItem("groceryList",JSON.stringify(items));
-  },[items]);
+  // //seting up items to local storage:
+  // useEffect(()=>{
+  //   localStorage.setItem("groceryList",JSON.stringify(items));
+  // },[items]);
 
 
   
