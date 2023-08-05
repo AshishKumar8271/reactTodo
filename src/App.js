@@ -4,7 +4,7 @@ import "./grocerList/grocery.css";
 
 // // getting data from local storage:
 const getDataFromStroage=()=>{
-  let StorageList=localStorage.getItem("groceryList");
+  let StorageList=sessionStorage.getItem("groceryList");
   if(StorageList!==[]){
     return JSON.parse(StorageList);
   }
@@ -26,7 +26,7 @@ const App = () => {
 
   //seting up items to local storage:
   useEffect(()=>{
-    localStorage.setItem("groceryList",JSON.stringify(items));
+    sessionStorage.setItem("groceryList",JSON.stringify(items));
   },[items]);
 
 
